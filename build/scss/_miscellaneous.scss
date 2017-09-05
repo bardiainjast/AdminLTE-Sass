@@ -346,7 +346,7 @@
 
 // Remove border radius
 .flat {
-  @include border-radius(0,0,0,0); //!important;
+  @include border-radius(0 !important);
 }
 
 .text-bold {
@@ -368,52 +368,52 @@
 
 // Gradient Background colors
 .bg-teal-gradient {
-  @include gradient($teal, $teal, lighten($teal, 16%), "!important"); //!important;
+  @include gradient($teal !important, $teal !important, lighten($teal, 16%) !important);
   color: #fff;
 }
 
 .bg-light-blue-gradient {
-  @include gradient($light-blue, $light-blue, lighten($light-blue, 12%), "!important"); //!important;
+  @include gradient($light-blue !important, $light-blue !important, lighten($light-blue, 12%) !important);
   color: #fff;
 }
 
 .bg-blue-gradient {
-  @include gradient($blue, $blue, lighten($blue, 7%), "!important"); //!important;
+  @include gradient($blue !important, $blue !important, lighten($blue, 7%) !important);
   color: #fff;
 }
 
 .bg-aqua-gradient {
-  @include gradient($aqua, $aqua, lighten($aqua, 7%), "!important"); //!important;
+  @include gradient($aqua, !important $aqua !important, lighten($aqua, 7%) !important);
   color: #fff;
 }
 
 .bg-yellow-gradient {
-  @include gradient($yellow, $yellow, lighten($yellow, 16%), "!important"); //!important;
+  @include gradient($yellow !important, $yellow !important, lighten($yellow, 16%) !important);
   color: #fff;
 }
 
 .bg-purple-gradient {
-  @include gradient($purple, $purple, lighten($purple, 16%), "!important"); //!important;
+  @include gradient($purple !important, $purple !important, lighten($purple, 16%) !important);
   color: #fff;
 }
 
 .bg-green-gradient {
-  @include gradient($green, $green, lighten($green, 7%), "!important"); //!important;
+  @include gradient($green !important, $green !important, lighten($green, 7%) !important);
   color: #fff;
 }
 
 .bg-red-gradient {
-  @include gradient($red, $red, lighten($red, 10%), "!important"); //!important;
+  @include gradient($red !important, $red !important, lighten($red, 10%) !important);
   color: #fff;
 }
 
 .bg-black-gradient {
-  @include gradient($black, $black, lighten($black, 10%), "!important"); //!important;
+  @include gradient($black !important, $black !important, lighten($black, 10%) !important);
   color: #fff;
 }
 
 .bg-maroon-gradient {
-  @include gradient($maroon, $maroon, lighten($maroon, 10%), "!important"); //!important;
+  @include gradient($maroon !important, $maroon !important, lighten($maroon, 10%) !important);
   color: #fff;
 }
 
@@ -469,13 +469,13 @@
   img {
     width: 40px;
     height: 40px;
-    float: left;
+    @include float(left);
   }
   .username,
   .description,
   .comment {
     display: block;
-    margin-left: 50px;
+    @include margin-left(50px);
   }
   .username {
     font-size: 16px;
@@ -492,7 +492,7 @@
     .username,
     .description,
     .comment {
-      margin-left: 40px;
+      @include margin-left(40px);
     }
     .username {
       font-size: 14px;
@@ -504,14 +504,14 @@
 .img-sm,
 .img-md,
 .img-lg {
-  float: left;
+  @include float(left);
 }
 
 .img-sm {
   width: 30px !important;
   height: 30px !important;
   + .img-push {
-    margin-left: 40px;
+    @include margin-left(40px);
   }
 }
 
@@ -519,7 +519,7 @@
   width: 60px;
   height: 60px;
   + .img-push {
-    margin-left: 70px;
+    @include margin-left(70px);
   }
 }
 
@@ -527,7 +527,7 @@
   width: 100px;
   height: 100px;
   + .img-push {
-    margin-left: 110px;
+    @include margin-left(110px);
   }
 }
 
@@ -553,10 +553,10 @@
     max-width: 100px;
     max-height: 100px;
     height: auto;
-    float: left;
+    @include float(left);
   }
   .attachment-pushed {
-    margin-left: 110px;
+    @include margin-left(110px);
   }
   .attachment-heading {
     margin: 0;

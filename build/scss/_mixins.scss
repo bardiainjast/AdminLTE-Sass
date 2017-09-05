@@ -2,7 +2,8 @@
 //===============
 
 //Changes the color and the hovering properties of the navbar
-@mixin navbar-variant($color, $font-color: rgba(255, 255, 255, 0.8), $hover-color: #f6f6f6, $hover-bg: rgba(0, 0, 0, 0.1)) {
+@mixin navbar-variant($color, $font-color: rgba(255, 255, 255, 0.8), $hover-color: #f6f6f6, $hover-bg: rgba(0, 0, 0, 0.1))
+{
   background-color: $color;
   //Navbar links
   .nav > li > a {
@@ -31,7 +32,8 @@
 }
 
 //Logo color variation
-@mixin logo-variant($bg-color, $color: #fff, $border-bottom-color: transparent, $border-bottom-width: 0) {
+@mixin logo-variant($bg-color, $color: #fff, $border-bottom-color: transparent, $border-bottom-width: 0)
+{
   background-color: $bg-color;
   color: $color;
   border-bottom: $border-bottom-width solid $border-bottom-color;
@@ -42,7 +44,8 @@
 }
 
 //Box solid color variantion creator
-@mixin box-solid-variant($color, $text-color: #fff) {
+@mixin box-solid-variant($color, $text-color: #fff)
+{
   border: 1px solid $color;
   > .box-header {
     color: $text-color;
@@ -56,7 +59,8 @@
 }
 
 //Direct Chat Variant
-@mixin direct-chat-variant($bg-color, $color: #fff) {
+@mixin direct-chat-variant($bg-color, $color: #fff)
+{
   .right > .direct-chat-text {
     background: $bg-color;
     border-color: $bg-color;
@@ -68,30 +72,55 @@
   }
 }
 
-//Different radius each side
-@mixin border-radius($top-left, $top-right, $bottom-left, $bottom-right)
+//border radius creator
+@mixin border-radius($radius...)
 {
-  border-top-left-radius: $top-left;
-  border-top-right-radius: $top-right;
-  border-bottom-right-radius: $bottom-right;
-  border-bottom-left-radius: $bottom-left;
+  @if length($radius) < 4 {
+    border-radius: $radius;
+  } @else {
+    @include border-radius-norm($radius...);
+  }
+}
+
+//Different radius each side
+@mixin border-radius-norm($top-left, $top-right, $bottom-left, $bottom-right)
+{
+  border-top-left-radius: $top-left
+;
+  border-top-right-radius: $top-right
+;
+  border-bottom-right-radius: $bottom-right
+;
+  border-bottom-left-radius: $bottom-left
+;
 }
 
 //Gradient background
-@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF, $important:"") {
+@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF)
+{
   background: $color;
-  background: -webkit-gradient(linear,left bottom,left top,color-stop(0, $start),color-stop(1, $stop)) unquote($important);
-  background: -ms-linear-gradient(bottom,$start,$stop) unquote($important);
-  background: -moz-linear-gradient(center bottom, $start 0%, $stop 100%) unquote($important);
-  background: -o-linear-gradient($stop, $start) unquote($important);
-  //filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$stop,$start)) unquote($important);
+  background: -webkit-gradient(linear,
+  left bottom,
+  left top,
+  color-stop(0, $start),
+  color-stop(1, $stop));
+  background: -ms-linear-gradient(bottom,
+  $start,
+  $stop);
+  background: -moz-linear-gradient(center bottom,
+  $start 0%,
+  $stop 100%);
+  background: -o-linear-gradient($stop,
+  $start);
+  filter: "progid:DXImageTransform.Microsoft@include gradient(startColorstr='#{$stop}', endColorstr='#{$start}', GradientType=0)";
 }
 
 //Added 2.1.0
 //Skins Mixins
 
 //Dark Sidebar Mixin
-@mixin skin-dark-sidebar($link-hover-border-color) {
+@mixin skin-dark-sidebar($link-hover-border-color)
+{
   // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
   .wrapper,
   .main-sidebar,
@@ -113,7 +142,7 @@
     }
     //links
     > a {
-      border-left: 3px solid transparent;
+      @include border-left(3px solid transparent);
     }
     //Hover and active states
     &:hover > a, &.active > a {
@@ -147,7 +176,7 @@
   }
   //The sidebar search form
   .sidebar-form {
-    @include border-radius(3px,3px,3px,3px);
+    @include border-radius(3px);
     border: 1px solid lighten($sidebar-dark-bg, 10%);
     margin: 10px 10px;
     input[type="text"], .btn {
@@ -155,17 +184,19 @@
       background-color: lighten($sidebar-dark-bg, 10%);
       border: 1px solid transparent;
       height: 35px;
-      @include transition(all $transition-speed $transition-fn);
+      //@include transition(all $transition-speed $transition-fn);
     }
     input[type="text"] {
       color: #666;
       @include border-radius(2px, 0, 2px, 0);
-      &:focus, &:focus + .input-group-btn .btn {
+      &:focus,
+      &:focus + .input-group-btn .btn {
         background-color: #fff;
         color: #666;
       }
       &:focus + .input-group-btn .btn {
-        border-left-color: #fff;
+        @include border-left-color(#fff);
+
       }
     }
     .btn {
@@ -176,7 +207,8 @@
 }
 
 //Light Sidebar Mixin
-@mixin skin-light-sidebar($icon-active-color) {
+@mixin skin-light-sidebar($icon-active-color)
+{
   // Sidebar background color (Both .wrapper and .left-side are responsible for sidebar bg color)
   .wrapper,
   .main-sidebar,
@@ -185,7 +217,7 @@
   }
   .content-wrapper,
   .main-footer {
-    border-left: 1px solid $gray;
+    @include border-left(1px solid $gray);
   }
   //User Panel (resides in the sidebar)
   .user-panel {
@@ -204,7 +236,7 @@
     }
     //links
     > a {
-      border-left: 3px solid transparent;
+      @include border-left(3px solid transparent);
       font-weight: 600;
     }
     //Hover and active states
@@ -251,7 +283,7 @@
   }
   //The sidebar search form
   .sidebar-form {
-    @include border-radius(3px,3px,3px,3px);
+    @include border-radius(3px);
     border: 1px solid $gray; //darken($sidebar-light-bg, 5%);
     margin: 10px 10px;
     input[type="text"],
@@ -260,7 +292,7 @@
       background-color: #fff; //darken($sidebar-light-bg, 3%);
       border: 1px solid transparent;
       height: 35px;
-      @include transition(all $transition-speed $transition-fn);
+      //@include transition(all $transition-speed $transition-fn);
     }
     input[type="text"] {
       color: #666;
@@ -271,7 +303,7 @@
         color: #666;
       }
       &:focus + .input-group-btn .btn {
-        border-left-color: #fff;
+        @include border-left-color(#fff);
       }
     }
     .btn {
@@ -282,7 +314,7 @@
   @media (min-width: $screen-sm-min) {
     &.sidebar-mini.sidebar-collapse {
       .sidebar-menu > li > .treeview-menu {
-        border-left: 1px solid $gray;
+        @include border-left(1px solid $gray);
       }
     }
   }

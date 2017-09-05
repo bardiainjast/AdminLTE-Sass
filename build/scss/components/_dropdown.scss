@@ -120,14 +120,14 @@
       padding: 10px 10px;
       // User image
       > div > img {
-        margin: auto 10px auto auto;
+        @include margin($top: auto, $right: 10px, $bottom: auto, $left: auto);
         width: 40px;
         height: 40px;
       }
       // Message heading
       > h4 {
         padding: 0;
-        margin: 0 0 0 45px;
+        @include margin($top: 0, $right: 0, $bottom: 0, $left: 45px);
         color: #444444;
         font-size: 15px;
         position: relative;
@@ -137,12 +137,12 @@
           font-size: 10px;
           position: absolute;
           top: 0;
-          right: 0;
+          @include right(0);
         }
       }
 
       > p {
-        margin: 0 0 0 45px;
+        @include margin($top: 0, $right: 0, $bottom: 0, $left: 45px);
         font-size: 12px;
         color: #888888;
       }
@@ -163,7 +163,7 @@
       > h3 {
         font-size: 14px;
         padding: 0;
-        margin: 0 0 10px 0;
+        @include margin($top: 0, $right: 0, $bottom: 10px, $left: 0);
         color: #666666;
       }
 
@@ -246,15 +246,15 @@
     }
   }
   .user-image {
-    float: left;
+    @include float(left);
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin-right: 10px;
+    @include margin-right(10px);
     margin-top: -2px;
     @media (max-width: $screen-xs-max) {
       float: none;
-      margin-right: 0;
+      @include margin-right(0);
       margin-top: -8px;
       line-height: 10px;
     }
@@ -327,21 +327,21 @@
     position: relative;
     > .dropdown-menu {
       position: absolute;
-      right: 0;
-      left: auto;
+      @include right(0);
+      @include left(auto);
     }
   }
 }
 
 @media (max-width: $screen-sm-max) {
   .navbar-custom-menu > .navbar-nav {
-    float: right;
+    @include float(right);
     > li {
       position: static;
       > .dropdown-menu {
         position: absolute;
-        right: 5%;
-        left: auto;
+        @include right(5%);
+        @include left(auto);
         border: 1px solid #ddd;
         background: #fff;
       }

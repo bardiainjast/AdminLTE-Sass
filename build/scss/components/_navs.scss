@@ -3,7 +3,7 @@
  * --------------
  */
 
-.nav {
+ .nav {
   > li > a:hover,
   > li > a:active,
   > li > a:focus {
@@ -15,13 +15,13 @@
 /* NAV PILLS */
 .nav-pills {
   > li > a {
-    @include border-radius(0,0,0,0);
+    @include border-radius(0);
     border-top: 3px solid transparent;
     color: #444;
     > .fa,
     > .glyphicon,
     > .ion {
-      margin-right: 5px;
+      @include margin-right(5px);
     }
   }
   > li.active > a,
@@ -37,9 +37,9 @@
 /* NAV STACKED */
 .nav-stacked {
   > li > a {
-    @include border-radius(0,0,0,0);
+    @include border-radius(0);
     border-top: 0;
-    border-left: 3px solid transparent;
+    @include border-left(3px solid transparent);
     color: #444;
   }
   > li.active > a,
@@ -47,7 +47,7 @@
     background: transparent;
     color: #444;
     border-top: 0;
-    border-left-color: $light-blue;
+    @include border-left-color($light-blue);
   }
 
   > li.header {
@@ -74,7 +74,7 @@
       margin-bottom: -2px;
       > a {
         color: #444;
-        @include border-radius(0,0,0,0);
+        @include border-radius(0);
         &.text-muted {
           color: #999;
         }
@@ -94,7 +94,7 @@
           border-color: transparent;
         }
       }
-      margin-right: 5px;
+      @include margin-right(5px);
     }
 
     > li.active {
@@ -116,26 +116,26 @@
       margin-left: 0;
       &.active {
         > a {
-          border-left-color: transparent;
+          @include border-left-color(transparent);
         }
       }
     }
 
-    //Pulled to the right
+    // Pulled to the right
     &.pull-right {
       float: none !important;
       > li {
-        float: right;
+        @include float(right);
       }
       > li:first-of-type {
         margin-right: 0;
         > a {
-          border-left-width: 1px;
+          @include border-left-width(1px);
         }
         &.active {
           > a {
-            border-left-color: #f4f4f4;
-            border-right-color: transparent;
+            @include border-left-color(#f4f4f4);
+            @include border-right-color(transparent);
           }
         }
       }
@@ -149,7 +149,7 @@
       > .fa,
       > .glyphicon,
       > .ion {
-        margin-right: 5px;
+        @include margin-right(5px);
       }
     }
   }
@@ -220,7 +220,7 @@
   }
   &.pagination-flat {
     > li > a {
-      @include border-radius(0,0,0,0 !important);
+      @include border-radius(0 !important)
     }
   }
 }

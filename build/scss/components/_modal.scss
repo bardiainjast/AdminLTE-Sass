@@ -1,13 +1,13 @@
 /*
- * Component: Modal
+ * Component: modal
  * ----------------
  */
-.modal {
+ .modal {
   background: rgba(0, 0, 0, .3);
 }
 
 .modal-content {
-  @include border-radius(0,0,0,0);
+  @include border-radius(0);
   @include box-shadow(0 2px 3px rgba(0, 0, 0, .125));
   border: 0;
   @media (min-width: $screen-sm-min) {

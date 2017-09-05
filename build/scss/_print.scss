@@ -2,7 +2,7 @@
  * Misc: print
  * -----------
  */
-@media print {
+ @media print {
   //Add to elements that you do not want to show when printing
   .no-print {
     display: none !important;
@@ -20,7 +20,7 @@
   .content-wrapper,
   .right-side,
   .main-footer {
-    margin-left: 0 !important;
+    @include margin-left(0 !important);
     min-height: 0 !important;
     @include translate(0 !important, 0 !important);
   }
@@ -39,7 +39,7 @@
   }
 
   .invoice-col {
-    float: left;
+    @include float(left);
     width: 33.3333333%;
   }
 

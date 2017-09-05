@@ -2,7 +2,7 @@
  * Page: Mailbox
  * -------------
  */
-.mailbox-messages {
+ .mailbox-messages {
   > .table {
     margin: 0;
   }
@@ -40,11 +40,11 @@
 .mailbox-attachments {
   @extend .list-unstyled;
   li {
-    float: left;
+    @include float(left);
     width: 200px;
     border: 1px solid #eee;
     margin-bottom: 10px;
-    margin-right: 10px;
+    @include margin-right(10px);
   }
 }
 

@@ -2,15 +2,15 @@
  * Component: Users List
  * ---------------------
  */
-.users-list {
- @extend .list-unstyled;
+ .users-list {
+  @extend .list-unstyled;
   > li {
     width: 25%;
-    float: left;
+    @include float(left);
     padding: 10px;
     text-align: center;
     img {
-      @include border-radius(50%,50%,50%,50%);
+      @include border-radius(50%);
       max-width: 100%;
       height: auto;
     }

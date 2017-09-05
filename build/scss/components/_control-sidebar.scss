@@ -13,7 +13,7 @@
 .control-sidebar-bg,
 .control-sidebar {
   top: 0;
-  right: -$control-sidebar-width;
+  @include left(-$control-sidebar-width);
   width: $control-sidebar-width;
   @include transition(right $transition-speed ease-in-out);
 }
@@ -35,7 +35,7 @@
   &.control-sidebar-open {
     &,
     + .control-sidebar-bg {
-      right: 0;
+      @include left(0);
     }
   }
 }
@@ -44,13 +44,13 @@
 .control-sidebar-open {
   .control-sidebar-bg,
   .control-sidebar {
-    right: 0;
+    @include left(0);
   }
   @media (min-width: $screen-sm) {
     .content-wrapper,
     .right-side,
     .main-footer {
-      margin-right: $control-sidebar-width;
+      @include margin-left($control-sidebar-width);
     }
   }
 }
@@ -62,18 +62,18 @@
       &,
       &:hover,
       &:focus {
-        border-left-width: 0;
+        @include border-left-width(0);
       }
     }
     > a {
-      @include border-radius(0,0,0,0);
+      @include border-radius(0);
 
       //Hover and active states
       &,
       &:hover {
         border-top: none;
-        border-right: none;
-        border-left: 1px solid transparent;
+        @include border-right(none);
+        @include border-left(1px solid transparent);
         border-bottom: 1px solid transparent;
       }
       .icon {
@@ -88,7 +88,7 @@
         &:focus,
         &:active {
           border-top: none;
-          border-right: none;
+          @include border-right(none);
           border-bottom: none;
         }
       }
@@ -132,7 +132,7 @@
     }
   }
   .menu-icon {
-    float: left;
+    @include float(left);
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -140,7 +140,7 @@
     line-height: 35px;
   }
   .menu-info {
-    margin-left: 45px;
+    @include margin-left(45px);
     margin-top: 3px;
     > .control-sidebar-subheading {
       margin: 0;
@@ -174,7 +174,7 @@
         &,
         &:hover,
         &:focus {
-          border-left-color: darken($sidebar-dark-bg, 7%);
+          @include border-left-color(darken($sidebar-dark-bg, 7%));
           border-bottom-color: darken($sidebar-dark-bg, 7%);
         }
         &:hover,
@@ -229,7 +229,7 @@
   &,
   + .control-sidebar-bg {
     background: $sidebar-light-bg;
-    border-left: 1px solid $gray;
+    @include border-left(1px solid $gray);
   }
   // Sidebar tabs
   .nav-tabs.control-sidebar-tabs {
@@ -242,7 +242,7 @@
         &,
         &:hover,
         &:focus {
-          border-left-color: $gray;
+          @include border-left-color($gray);
           border-bottom-color: $gray;
         }
         &:hover,
@@ -272,7 +272,7 @@
   }
   //Sidebar list
   .control-sidebar-menu {
-    margin-left: -14px;
+    @include margin-left(-14px);
     > li {
       > a {
         &:hover {

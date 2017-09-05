@@ -3,7 +3,7 @@
  * ----------------
  */
 
-.table {
+ .table {
   //Cells
   > thead,
   > tbody,
@@ -63,9 +63,9 @@ table.text-center {
 
 .table.align {
   th {
-    text-align: left;
+    @include text-align(left);
   }
   td {
-    text-align: right;
+    @include text-align(right);
   }
 }

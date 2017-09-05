@@ -2,15 +2,15 @@
  * Page: 400 and 500 error pages
  * ------------------------------
  */
-.error-page {
+ .error-page {
   width: 600px;
-  margin: 20px auto 0 auto;
+  @include margin($top: 20px, $right: auto, $bottom: 0, $left: auto);
   @media (max-width: $screen-sm-max) {
     width: 100%;
   }
   //For the error number e.g: 404
   > .headline {
-    float: left;
+    @include float(left);
     font-size: 100px;
     font-weight: 300;
     @media (max-width: $screen-sm-max) {
@@ -20,9 +20,9 @@
   }
   //For the message
   > .error-content {
-    margin-left: 190px;
+    @include margin-left(190px);
     @media (max-width: $screen-sm-max) {
-      margin-left: 0;
+      @include margin-left(0);
     }
     > h3 {
       font-weight: 300;

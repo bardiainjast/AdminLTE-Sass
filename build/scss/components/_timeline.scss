@@ -3,7 +3,7 @@
  * -------------------
  */
 
-.timeline {
+ .timeline {
   position: relative;
   margin: 0 0 30px 0;
   padding: 0;
@@ -17,33 +17,33 @@
     bottom: 0;
     width: 4px;
     background: #ddd;
-    left: 31px;
+    @include left(31px);
     margin: 0;
-    @include border-radius(2px,2px,2px,2px);
+    @include border-radius(2px);
   }
 
   > li {
     position: relative;
-    margin-right: 10px;
+    @include margin-right(10px);
     margin-bottom: 15px;
     @include clearfix();
 
     // The content
     > .timeline-item {
       @include box-shadow($box-boxshadow);
-      @include border-radius($box-border-radius, $box-border-radius, $box-border-radius, $box-border-radius);
+      @include border-radius($box-border-radius);
       margin-top: 0;
       background: #fff;
       color: #444;
-      margin-left: 60px;
-      margin-right: 15px;
+      @include margin-left(60px);
+      @include margin-right(15px);
       padding: 0;
       position: relative;
 
       // The time and header
       > .time {
         color: #999;
-        float: right;
+        @include float(right);
         padding: 10px;
         font-size: 12px;
       }
@@ -78,7 +78,7 @@
       background: $gray;
       border-radius: 50%;
       text-align: center;
-      left: 18px;
+      @include left(18px);
       top: 0;
     }
   }
@@ -91,7 +91,7 @@
       display: inline-block;
       background-color: #fff;
 
-      @include border-radius(4px,4px,4px,4px);
+      @include border-radius(4px);
     }
   }
 }

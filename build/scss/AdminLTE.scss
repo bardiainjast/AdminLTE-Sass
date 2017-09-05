@@ -7,13 +7,15 @@
 !*/
 //google fonts
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
-@import "../bootstrap/scss/_bootstrap.scss";
+
 // //MISC
 // //----
 @import "variables";
 @import "core";
 @import "mixins";
 @import "miscellaneous";
+@import "fonts";
+@import "custom";
 // //COMPONENTS
 // //-----------
 @import "components/header";

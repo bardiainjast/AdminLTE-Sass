@@ -31,7 +31,7 @@
 
 /* Will contain the image and the sign in form */
 .lockscreen-item {
-  @include border-radius(4px,4px,4px,4px);
+  @include border-radius(4px);
   padding: 0;
   background: #fff;
   position: relative;
@@ -41,15 +41,15 @@
 
 /* User image */
 .lockscreen-image {
-  @include border-radius(50%,50%,50%,50%);
+  @include border-radius(50%);
   position: absolute;
-  left: -10px;
+  @include left(-10px);
   top: -25px;
   background: #fff;
   padding: 5px;
   z-index: 10;
   > img {
-    @include border-radius(50%,50%,50%,50%);
+    @include border-radius(50%);
     width: 70px;
     height: 70px;
   }
@@ -57,7 +57,7 @@
 
 /* Contains the password input and the login button */
 .lockscreen-credentials {
-  margin-left: 70px;
+  @include margin-left(70px);
   .form-control {
     border: 0;
   }

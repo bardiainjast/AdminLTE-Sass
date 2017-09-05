@@ -2,9 +2,8 @@
  * Component: Form
  * ---------------
  */
- 
-.form-control {
-  @include border-radius($input-radius,$input-radius,$input-radius,$input-radius);
+ .form-control {
+  @include border-radius($input-radius);
   box-shadow: none;
   border-color: $gray;
   &:focus {
@@ -34,6 +33,9 @@
       border-color: $green;
       box-shadow: none;
     }
+    .help-block {
+      color: $green;
+    }
   }
 
   &.has-warning {
@@ -43,6 +45,9 @@
     .form-control {
       border-color: $yellow;
       box-shadow: none;
+    }
+    .help-block {
+      color: $yellow;
     }
   }
 
@@ -54,13 +59,16 @@
       border-color: $red;
       box-shadow: none;
     }
+    .help-block {
+      color: $red;
+    }
   }
 }
 
 /* Input group */
 .input-group {
   .input-group-addon {
-    @include border-radius($input-radius,$input-radius,$input-radius,$input-radius);
+    @include border-radius($input-radius);
     border-color: $gray;
     background-color: #fff;
   }
@@ -70,13 +78,13 @@
 .btn-group-vertical {
   .btn {
     &.btn-flat:first-of-type, &.btn-flat:last-of-type {
-      @include border-radius(0,0,0,0);
+      @include border-radius(0);
     }
   }
 }
 
 .icheck > label {
-  padding-left: 0;
+  @include padding-left(0);
 }
 
 /* support Font Awesome icons in form-control */

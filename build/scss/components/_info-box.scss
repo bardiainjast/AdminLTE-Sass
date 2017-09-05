@@ -2,24 +2,24 @@
  * Component: Info Box
  * -------------------
  */
-.info-box {
+ .info-box {
   display: block;
   min-height: 90px;
   background: #fff;
   width: 100%;
   box-shadow: $box-boxshadow;
-  @include border-radius(2px,2px,2px,2px);
+  @include border-radius(2px);
   margin-bottom: 15px;
   small {
     font-size: 14px;
   }
   .progress {
     background: rgba(0, 0, 0, .2);
-    margin: 5px -10px 5px -10px;
+    @include margin($top: 5px, $right: -10px, $bottom: 5px, $left: -10px);
     height: 2px;
     &,
     & .progress-bar {
-      @include border-radius(0,0,0,0);
+      @include border-radius(0);
     }
     .progress-bar {
       background: #fff;
@@ -30,7 +30,7 @@
 .info-box-icon {
   @include border-radius(2px, 0, 2px, 0);
   display: block;
-  float: left;
+  @include float(left);
   height: 90px;
   width: 90px;
   text-align: center;
@@ -44,7 +44,7 @@
 
 .info-box-content {
   padding: 5px 10px;
-  margin-left: 90px;
+  @include margin-left(90px);
 }
 
 .info-box-number {

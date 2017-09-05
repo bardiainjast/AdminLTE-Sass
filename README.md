@@ -1,3 +1,6 @@
+# Bidirectional Admin LTE Fork
+Note: this project is under active development
+
 AdminLTE with Sass, Webpack, Browser-Sync
 ============
 

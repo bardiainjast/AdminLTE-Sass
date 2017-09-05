@@ -9,7 +9,7 @@
     font-weight: 600;
   }
   .icon {
-    margin-right: 10px;
+    @include margin-right(10px);
   }
   .close {
     color: #000;

@@ -32,8 +32,8 @@
   .widget-user-image {
     position: absolute;
     top: 65px;
-    left: 50%;
-    margin-left: -45px;
+    @include left(50%);
+    @include margin-left(-45px);
     > img {
       width: 90px;
       height: auto;
@@ -65,14 +65,14 @@
   }
   .widget-user-username,
   .widget-user-desc {
-    margin-left: 75px;
+    @include margin-left(75px);
   }
   //User image container
   .widget-user-image {
     > img {
       width: 65px;
       height: auto;
-      float: left;
+      @include float(left);
     }
   }
 }

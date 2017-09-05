@@ -2,7 +2,7 @@
  * Component: Direct Chat
  * ----------------------
  */
-.direct-chat {
+ .direct-chat {
   .box-body {
     @include border-bottom-radius(0);
     position: relative;
@@ -39,19 +39,19 @@
 }
 
 .direct-chat-text {
-  @include border-radius(5px,5px,5px,5px);
+  @include border-radius(5px);
   position: relative;
   padding: 5px 10px;
   background: $direct-chat-default-msg-bg;
   border: 1px solid $direct-chat-default-msg-border-color;
-  margin: 5px 0 0 50px;
+  @include margin($top: 5px, $right: 0, $bottom: 5px, $left: 50px);
   color: $direct-chat-default-font-color;
 
   //Create the arrow
   &:after,
   &:before {
     position: absolute;
-    right: 100%;
+    @include right(100%);
     top: 15px;
     border: solid transparent;
     border-right-color: $direct-chat-default-msg-border-color;
@@ -70,25 +70,25 @@
     margin-top: -6px;
   }
   .right & {
-    margin-right: 50px;
-    margin-left: 0;
+    @include margin-right(50px);
+    @include margin-left(0);
     &:after,
     &:before {
       right: auto;
-      left: 100%;
-      border-right-color: transparent;
-      border-left-color: $direct-chat-default-msg-border-color;
+      @include left(100%);
+      @include border-right-color(transparent);
+      @include border-left-color($direct-chat-default-msg-border-color);
     }
   }
 }
 
 .direct-chat-img {
-  @include border-radius(50%,50%,50%,50%);
-  float: left;
+  @include border-radius(50%);
+  @include float(left);
   width: 40px;
   height: 40px;
   .right & {
-    float: right;
+    @include float(right);
   }
 }
 
@@ -140,13 +140,13 @@
 }
 
 .contacts-list-img {
-  @include border-radius(50%,50%,50%,50%);
+  @include border-radius(50%);
   width: 40px;
-  float: left;
+  @include float(left);
 }
 
 .contacts-list-info {
-  margin-left: 45px;
+  @include margin-left(45px);
   color: #fff;
 }
 

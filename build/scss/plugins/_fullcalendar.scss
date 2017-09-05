@@ -21,15 +21,15 @@
   font-size: 15px;
   line-height: 1.6em;
   color: #666;
-  margin-left: 10px;
+  @include margin-left(10px);
 }
 
 .fc-header-right {
-  padding-right: 10px;
+  @include padding-right(10px);
 }
 
 .fc-header-left {
-  padding-left: 10px;
+  @include padding-left(10px);
 }
 
 // Calendar table header cells
@@ -61,7 +61,7 @@
 .fc-day-number {
   font-size: 20px;
   font-weight: 300;
-  padding-right: 10px;
+  @include padding-right(10px);
 }
 
 .fc-color-picker {
@@ -69,7 +69,7 @@
   margin: 0;
   padding: 0;
   > li {
-    float: left;
+    @include float(left);
     font-size: 30px;
     margin-right: 5px;
     line-height: 30px;
