@@ -1,0 +1,22 @@
+{
+  "name": "admin-lte-bi-directional",
+  "description": "admin lte sass with support of both rtl and ltr",
+  "main": "",
+  "authors": [
+    "Bardia Rastin <a.rastin98@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bardiainjast/AdminLTE-Sass",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-bi-directional": "~3.3.6"
+  },
+  "version": "0.0.0"
+}
